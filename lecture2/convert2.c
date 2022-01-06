@@ -6,8 +6,8 @@ main() {
   float highC, avgC, lowC;
   int month, day, year;
 
-  FILE * input  = fopen("chicago_temps_2012.csv", "r");
-  FILE * output = fopen("chicago_tempsC_2012.csv", "w+"); 
+  FILE * input  = fopen("./data/chicago_temps_2012.csv", "r");
+  FILE * output = fopen("./data/chicago_tempsC_2012.csv", "w+"); 
 
   /* throw away the first line of text, 
      star means 'don't assign to a variable'  */

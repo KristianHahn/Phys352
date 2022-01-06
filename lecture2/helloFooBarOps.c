@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define MY_FOO 2020
+#define MY_FOO 2022
 #define MY_PI  3.14159 
 
 main() {
