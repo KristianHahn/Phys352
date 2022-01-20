@@ -1,8 +1,8 @@
 set xrange [0:30000]
 set yrange [0:10000]
 
-#set terminal png
-#set output "drag.png"
+set terminal png
+set output "drag.png"
 
 set title "Trajectory [vi=700 m/s, B2/m=4e-5 m^-1, a=6.5e-3 K/m, alpha=2.5]"
 set xlabel "x(km)"

@@ -1,6 +1,6 @@
-set terminal x11 size 1500,1000
-#set terminal png size 1500,1000
-#set output "sho.png"
+#set terminal x11 size 1500,1000
+set terminal png size 1500,1000
+set output "sho.png"
 
 set title "SHO Euler [l = 1m, dt = 0.04s, m = 1kg]
 set ylabel "theta (rad)"

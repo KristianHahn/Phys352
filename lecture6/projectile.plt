@@ -1,6 +1,6 @@
-set terminal x11 size 1500,1000
-#set terminal png size 1500,1000
-#set output "projectile.png"
+#set terminal x11 size 1500,1000
+set terminal png size 1500,1000
+set output "projectile.png"
 
 set xrange [0:60000]
 set yrange [0:20000]

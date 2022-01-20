@@ -5,9 +5,9 @@ Nb(t,Nbi,tau) = (Nbi/2)*(1-exp(-2*t/tau))
 set grid x y
 set xlabel "t"
 
-set terminal x11 size 1000,1000
-#set terminal png size 1000,1000
-#set output "2_species.png"
+#set terminal x11 size 1000,1000
+set terminal png size 1000,1000
+set output "2_species.png"
 
 set multiplot layout 2,1 
 
