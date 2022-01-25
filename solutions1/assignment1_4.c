@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 #define HEIGHT 5
 #define BASE   9
 
@@ -57,9 +59,8 @@ void triangle2( int offset  ) {
 
 }
 
-int main( ) {
-  int offset = 0;
+int main(int argc, char ** argv ) {
+  int offset = strtol(argv[1],NULL,10);
   triangle(HEIGHT*(offset+1));
   triangle2(HEIGHT*(offset));
-
 }
