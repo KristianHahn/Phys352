@@ -3,9 +3,8 @@
 #include <math.h>
 #include <fftw3.h>
 
-
-#define FFT_FORWARD 1
 #define FFT_ESTIMATE 1
+//#define FFT_FORWARD 1
 
 #define SIGNAL_PERIOD 4.2666
 // f = 0.2344 Hz
