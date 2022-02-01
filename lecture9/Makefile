@@ -5,19 +5,19 @@ lib : lib/libwave.a
 
 
 bin/main_wave_%.exe : src/main_wave_%.c 
-	gcc -g -std=gnu11 -pedantic -Iinclude $< -o $@ -Llib -lwave -lm -lfftw3
+	gcc -g -std=gnu99 -pedantic -Iinclude $< -o $@ -Llib -lwave -lm -lfftw3
 
 bin/main_fft_%.exe : src/main_fft_%.c 
-	gcc -g -std=gnu11 -pedantic -Iinclude $< -o $@ -Llib -lwave -lm -lfftw3
+	gcc -g -std=gnu99 -pedantic -Iinclude $< -o $@ -Llib -lwave -lm -lfftw3
 
 bin/main_%.exe : src/main_%.c 
-	gcc -g -std=gnu11 -pedantic -Iinclude $< -o $@ -lm -lfftw3
+	gcc -g -std=gnu99 -pedantic -Iinclude $< -o $@ -lm -lfftw3
 
 lib/libwave.a : obj/wave.o
 	ar r lib/libwave.a $< 
 
 obj/%.o : src/%.c 
-	gcc -g -std=gnu11 -pedantic -Iinclude -c $< -o $@
+	gcc -g -std=gnu99 -pedantic -Iinclude -c $< -o $@
 
 
 clean : 
