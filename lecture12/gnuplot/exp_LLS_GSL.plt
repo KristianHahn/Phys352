@@ -9,6 +9,13 @@ wfitfile = "odata/exp_LLS_GSL_weight.root.dat"
 wimgfile = "img/exp_LLS_GSL.weighted.png"
 
 
+#datafile = "idata/expGSL.dat"
+#fitfile = "odata/exp_LLS_GSL.dat"
+#imgfile = "img/exp_LLS_GSL.unweighted.png"
+#wfitfile = "odata/exp_LLS_GSL_weight.dat"
+#wimgfile = "img/exp_LLS_GSL.weighted.png"
+
+
 set output imgfile
 set multiplot layout 1,2
 
