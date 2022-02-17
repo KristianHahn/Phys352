@@ -1,5 +1,8 @@
 # NLLS 
 
+set term pngcairo
+set output "img/exp_NLLS_GSL.png"
+
 f(x,A,lambda,b) = A*exp(-lambda*x) + b
 
 # without weights

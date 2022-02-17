@@ -4,6 +4,9 @@ E(x,B_0,B_1) = B_0*exp(B_1*x)
 # they are expected to not fit well at large y : 
 # see http://mathworld.wolfram.com/LeastSquaresFittingExponential.html
 
+set term pngcairo
+set output "img/exp_LLS.png"
+
 
 # for the root generated exp data and LLS fit 
 B_1 = -0.050711

@@ -1,3 +1,6 @@
+set term pngcairo
+set output "img/linear.png"
+
 L(x,a,b) = a*x + b  
 
 A = 3.284170
