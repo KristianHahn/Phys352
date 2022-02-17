@@ -1,16 +1,21 @@
-set terminal qt 0 size 1000,500
+#set terminal qt 0 size 1000,500
+set terminal pngcairo size 1000,500
+
 
 datafile = "idata/exp.dat"
 fitfile = "odata/exp_LLS_GSL.root.dat"
+imgfile = "img/exp_LLS_GSL.unweighted.png"
 wfitfile = "odata/exp_LLS_GSL_weight.root.dat"
+wimgfile = "img/exp_LLS_GSL.weighted.png"
 
-#datafile = "idata/expGSL.dat"
-#fitfile = "odata/exp_LLS_GSL_weight.dat"
 
+set output imgfile
 set multiplot layout 1,2
 
 unset xrange
 unset yrange
+
+
 
 p datafile  u 2:4 w p pt 7 ps 0.25 title "data", fitfile u 2:10 w l lc  "red" title "fit", fitfile u 2:12 w l linestyle 3 linecolor "black" title "uncert", fitfile u 2:14 w l ls 3 linecolor "black" notitle
 
@@ -23,8 +28,11 @@ p datafile u 2:4 w p pt 7 ps 0.25 title "data", fitfile u 2:10 w l lc  "red" tit
 unset multiplot 
 
 
-set terminal qt 1 size 1000,500
+#set terminal qt 1 size 1000,500
 
+
+
+set output wimgfile
 set multiplot layout 1,2
 
 unset xrange
