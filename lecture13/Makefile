@@ -22,34 +22,34 @@ bin/generator_exp.exe : src/generator_exp.cc
 	g++ -g -ansi  `root-config --cflags` $^ -o $@  `root-config --libs`
 
 bin/generator_exp_GSL.exe : src/generator_exp_GSL.c 
-	gcc -g -ansi -std=gnu99 -pedantic  $^ -o $@  -lgsl -lgslcblas -lm
+	gcc -g -ansi -std=gnu99 -pedantic  $^ -o $@  -L/software/gsl/2.6-gcc-8.4.0/lib -lgsl -lgslcblas -lm
 
 bin/main_fit_exp_LLS.exe : src/main_fit_exp_LLS.c 
 	gcc -g -ansi -std=gnu99 -pedantic  $^ -o $@   -lm
 
 bin/main_fit_exp_LLS_GSL.exe : src/main_fit_exp_LLS_GSL.c 
-	gcc -g -ansi -std=gnu99 -pedantic  $^ -o $@  -lgsl -lgslcblas -lm
+	gcc -g -ansi -std=gnu99 -pedantic  $^ -o $@ -L/software/gsl/2.6-gcc-8.4.0/lib -lgsl -lgslcblas -lm
 
 bin/main_fit_exp_NLLS_GSL.exe : obj/exp_for_GSL.o obj/utils.o src/main_fit_exp_NLLS_GSL.c 
-	gcc -g -ansi -std=gnu99 -pedantic  -Iinclude $^ -o $@  -lgsl -lgslcblas -lm
+	gcc -g -ansi -std=gnu99 -pedantic  -Iinclude $^ -o $@ -L/software/gsl/2.6-gcc-8.4.0/lib -lgsl -lgslcblas -lm
 
 # higgs stuff 
 
 #obj/higgs_BG_gsl.o 
 bin/main_fit_higgs_BGonly_NLLS_GSL.exe : obj/utils.o src/main_fit_higgs_BGonly_NLLS_GSL.c 
-	gcc -g -ansi -std=gnu99 -pedantic  -Iinclude $^ -o $@  -L./lib -lphysics -lgsl -lgslcblas -lm
+	gcc -g -ansi -std=gnu99 -pedantic  -Iinclude $^ -o $@  -L./lib -lphysics -L/software/gsl/2.6-gcc-8.4.0/lib -lgsl -lgslcblas -lm
 
 #obj/higgs_SIG_BGfixed_gsl.o
 bin/main_fit_higgs_SIG_BGfixed_NLLS_GSL.exe :  obj/utils.o src/main_fit_higgs_SIG_BGfixed_NLLS_GSL.c 
-	gcc -g -ansi -std=gnu99 -pedantic  -Iinclude $^ -o $@  -L./lib -lphysics -lgsl -lgslcblas -lm
+	gcc -g -ansi -std=gnu99 -pedantic  -Iinclude $^ -o $@  -L./lib -lphysics -L/software/gsl/2.6-gcc-8.4.0/lib -lgsl -lgslcblas -lm
 
 #obj/higgs_SIG_BG2comp_gsl.o
 bin/main_fit_higgs_SIG_BG2comp_NLLS_GSL.exe :  obj/utils.o src/main_fit_higgs_SIG_BG2comp_NLLS_GSL.c 
-	gcc -g -ansi -std=gnu99 -pedantic  -Iinclude $^ -o $@  -L./lib -lphysics -lgsl -lgslcblas -lm
+	gcc -g -ansi -std=gnu99 -pedantic  -Iinclude $^ -o $@  -L./lib -lphysics -L/software/gsl/2.6-gcc-8.4.0/lib -lgsl -lgslcblas -lm
 
 #obj/higgs_SIG_BG3comp_gsl.o
 bin/main_fit_higgs_SIG_BG3comp_NLLS_GSL.exe :  obj/utils.o src/main_fit_higgs_SIG_BG3comp_NLLS_GSL.c 
-	gcc -g -ansi -std=gnu99 -pedantic  -Iinclude $^ -o $@  -L./lib -lphysics -lgsl -lgslcblas -lm
+	gcc -g -ansi -std=gnu99 -pedantic  -Iinclude $^ -o $@  -L./lib -lphysics -L/software/gsl/2.6-gcc-8.4.0/lib -lgsl -lgslcblas -lm
 
 
 bin/main_%.exe : src/main_%.c 
