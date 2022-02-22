@@ -12,6 +12,11 @@
 #SBATCH --job-name="test"       # Name of job
 
 
+# check number of args
+if [ "$#" -le 2 ]; then
+	echo "need to pass a job label and path as arguments"
+fi;
+
 # first arg is a label, and is output path
 ./bin/writehello.exe $1 $HOME
 
