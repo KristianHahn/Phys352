@@ -1,10 +1,22 @@
 
 
-all : lecture12 higgs
+all : lecture12 higgs slurm
+
 generator: bin/generator_exp.exe bin/generator_exp_GSL.exe 
+
 lecture12: bin/main_fit_linear_LS.exe bin/main_fit_exp_LLS.exe bin/main_fit_exp_LLS_GSL.exe bin/main_fit_exp_NLLS_GSL.exe  
+
 higgs:  bin/main_fit_higgs_BGonly_NLLS_GSL.exe bin/main_fit_higgs_SIG_BGfixed_NLLS_GSL.exe bin/main_fit_higgs_SIG_BG2comp_NLLS_GSL.exe bin/main_fit_higgs_SIG_BG3comp_NLLS_GSL.exe
 
+slurm : bin/writehello.exe
+
+# slurm testing
+
+bin/writehello.exe : src/writehello.c
+	gcc -g -ansi -std=gnu99 -pedantic  $^ -o $@  
+
+
+# old GSL stuff 
 
 bin/generator_exp.exe : src/generator_exp.cc 
 	g++ -g -ansi  `root-config --cflags` $^ -o $@  `root-config --libs`
