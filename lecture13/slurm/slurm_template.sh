@@ -18,8 +18,7 @@ module purge
 export PATH=$PATH:/projects/p20XXX/tools/
 
 # load modules you need to use
-module load gls
-
+module load gsl
 
 # A command you actually want to execute:
 echo "hello"
