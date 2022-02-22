@@ -29,5 +29,5 @@ echo "SLURM_ARRAY_TASK_MIN: ${SLURM_ARRAY_TASK_MIN}"
 
 # first arg is a label, and is output path
 # this script should be runs as:
-# sbatch ./slurm/slurm_array_job.sh $PWD/slurm/output                                                                                                                
+# sbatch ./slurm/slurm_array_hello.sh $PWD/slurm/output                                                                                                                
 ./bin/writehello.exe ${SLURM_ARRAY_TASK_ID} $path
