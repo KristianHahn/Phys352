@@ -50,8 +50,8 @@ main (int argc, char** argv)
   r = gsl_rng_alloc(gsl_rng_default);
 
   /* define the function to be minimized */
-  fdf.f = gaus_exp_f;
-  fdf.df = gaus_exp_df;   /* set to NULL for finite-difference Jacobian */
+  fdf.f = gaus_exp3_f;
+  fdf.df = gaus_exp3_df;   /* set to NULL for finite-difference Jacobian */
   fdf.fvv = NULL;     /* not using geodesic acceleration */
   fdf.n = n;
   fdf.p = p;

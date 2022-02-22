@@ -13,5 +13,5 @@ struct data {
 
 };
 
-int gaus_exp_f (const gsl_vector * x, void *data, gsl_vector * f);
-int gaus_exp_df (const gsl_vector * x, void *data, gsl_matrix * J);
+int gaus_exp2_f (const gsl_vector * x, void *data, gsl_vector * f);
+int gaus_exp2_df (const gsl_vector * x, void *data, gsl_matrix * J);
