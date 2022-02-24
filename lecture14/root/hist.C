@@ -12,7 +12,7 @@ void hist(string fname, string pngname, float sigest, int ntrial) {
   h->Fit("gaus");
 
   char str[512];
-  sprintf(str,"estm std: %f",sigest/sqrt(ntrial));
+  sprintf(str,"estimated std: %f",sigest/sqrt(ntrial));
   h->SetTitle(str);
 
 
