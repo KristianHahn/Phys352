@@ -50,8 +50,8 @@ main(int argc, char ** argv) {
   printf( "tot denom: %lu\n", denom);
   printf( "----------------------\n");
   printf( "sample variance :\n");
-  printf( "s2: %.10lf\n", s2);
-  printf( "s: %.10lf\n", sqrt(s2));
+  printf( "s2(xbar): %.10lf\n", s2);
+  printf( "s(xbar): %.10lf\n", sqrt(s2));
   printf( "s/sqrt(Nsamples): %.10lf\n", sqrt(s2)/sqrt(Nsamples));
   printf( "----------------------\n");
   printf( "pi = %.10lf +/- %.10lf\n", pi, err ); 
