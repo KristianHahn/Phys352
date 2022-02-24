@@ -1,4 +1,4 @@
-void hist(string fname, string pngname, float sigest) {
+void hist(string fname, string pngname, float sigest, int ntrial) {
 
   TTree * t = new TTree("t","t");
   t->ReadFile(fname.c_str());
@@ -12,7 +12,7 @@ void hist(string fname, string pngname, float sigest) {
   h->Fit("gaus");
 
   char str[512];
-  sprintf(str,"estm std: %f",sigest/sqrt(h->GetEntries()));
+  sprintf(str,"estm std: %f",sigest/sqrt(ntrial));
   h->SetTitle(str);
 
 

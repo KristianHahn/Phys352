@@ -11,6 +11,7 @@ for f in $files; do
     png=`echo $f | sed -e "s,data,img,;s,.dat,.png,"`
     echo "v/F" > tmp.dat
     cat $f >> tmp.dat
-    root -l -q -b root/hist.C\(\"tmp.dat\",\"$png\",1.650614\)
+    ntrial=`echo $f | sed -e 's,.*_,,;s,.dat,,'`
+    root -l -q -b root/hist.C\(\"tmp.dat\",\"$png\",1.61,$ntrial\)
     rm tmp.dat
 done 
