@@ -5,7 +5,7 @@ all : bin/circleInt.exe bin/avg_and_std.exe bin/combineData.exe
 
 # add -DVERBOSE to plot a circle trial ...
 bin/%.exe : src/%.c 
-	gc -g -ansi -std=gnu99 -pedantic -Iinclude  $< -o  $@ -lm
+	gcc -g -ansi -std=gnu99 -pedantic -Iinclude  $< -o  $@ -lm
 
 
 
