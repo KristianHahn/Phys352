@@ -9,11 +9,20 @@ main(int argc, char ** argv) {
   unsigned long tmpNtot, tmpNin, numer=0, denom=0;
   unsigned long Ntrials;
 
+  if( argc != 2 ) { 
+    printf("usage: combineData.exe <filename>\n");
+    return -1;
+  }
+
+
   FILE * f = fopen(argv[1], "r");
   double avgX=0, avgX2=0;
 
   int Nsamples=0;
-  while( fscanf( f, "Ntot: %lu Nin: %lu", &tmpNtot, &tmpNin ) != EOF ) { 
+  while( fscanf( f, "Ntot: %lu Nin: %lu\n", &tmpNtot, &tmpNin ) != EOF ) { 
+
+    printf( "sample: %d\tNtot: %lu\tNin: %lu\n", 
+	    Nsamples, tmpNtot, tmpNin);
 
     numer += tmpNin;
     denom += tmpNtot;
@@ -33,10 +42,14 @@ main(int argc, char ** argv) {
   double pi = avgX;
   double err = sqrt(s2)/sqrt(Nsamples);
 
+  printf( "----------------------\n");
   printf( "Ntrials: %lu\n", Ntrials);
   printf( "Nsamples: %lu\n", Nsamples);
-  printf( "numer: %lu\n", numer);
-  printf( "denom: %lu\n", denom);
+  printf( "----------------------\n");
+  printf( "tot numer: %lu\n", numer);
+  printf( "tot denom: %lu\n", denom);
+  printf( "----------------------\n");
+  printf( "sample variance :\n");
   printf( "s2: %.10lf\n", s2);
   printf( "s: %.10lf\n", sqrt(s2));
   printf( "s/sqrt(Nsamples): %.10lf\n", sqrt(s2)/sqrt(Nsamples));
@@ -45,5 +58,5 @@ main(int argc, char ** argv) {
   printf( "estimated err [ =1.65/sqrt(denom) ]: %.10lf\n", 1.65/sqrt(denom));
   printf( "----------------------\n");
 
-
+  return 0;
 }

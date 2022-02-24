@@ -5,7 +5,7 @@
 int main( int argc, char ** argv ) { 
 
   if( argc < 3 ) { 
-    printf("usage: circleInt.exe <Npts> <seed>\n");
+    printf("usage: circleInt.exe <Npts> <seed> [output file]\n");
     return -1;
   }
 
@@ -34,7 +34,14 @@ int main( int argc, char ** argv ) {
   printf( "# Ninside : %lu\n", Ninside);
   printf( "# Area : %lf\n", (double)Ninside/Npts);
   printf( "# 4Area : %lf\n", 4*(double)Ninside/Npts);
-
+  if( argc == 4 ) { 
+    FILE * f = fopen(argv[3],"w");
+    fprintf( f, "# Npts : %lu\n", Npts);
+    fprintf( f, "# Ninside : %lu\n", Ninside);
+    fprintf( f, "# Area : %lf\n", (double)Ninside/Npts);
+    fprintf( f, "# 4Area : %lf\n", 4*(double)Ninside/Npts);    
+    fclose(f);
+  }
   return 0;
 
 }

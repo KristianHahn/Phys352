@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if (( `hostname | grep -c quser` > 0 )); then
+    module load root
+fi;
+
+
 files=$( ls ./data/circleTests_*.dat );
 if [ -e tmp.dat ]; then rm tmp.dat; fi 
 for f in $files; do

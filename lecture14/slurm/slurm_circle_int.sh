@@ -13,8 +13,13 @@
 
 
 # the job ...
-NTrials=1000000000
+Ntrials=10000000000 #10*10^9 
 id=${SLURM_ARRAY_TASK_ID}
-seed=`echo "${id}*${RANDOM}" | bc`
-./circleInt.exe ${Ntrials} ${seed} >& ./slurm/output/circle_${id}.dat
+seed=$RANDOM
+output="./slurm/output/circle_${id}.dat"
+echo "I am running on $HOSTNAME"
+echo "I am running from $PWD"
+echo "calling circleInt: " 
+echo "./bin/circleInt.exe ${Ntrials} ${seed} ${output}"
+time ./bin/circleInt.exe ${Ntrials} ${seed} ${output}
 
