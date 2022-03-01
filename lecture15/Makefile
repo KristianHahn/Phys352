@@ -1,6 +1,6 @@
 
-
-all : bin/test.exe bin/main_M_vs_time.exe bin/main_M_vs_T.exe bin/main_fit_beta_LLS_GSL.exe bin/main_E_vs_T.exe bin/main_specific_heat.exe 
+#bin/main_fit_beta_LLS_GSL.exe
+all : bin/test.exe bin/main_M_vs_time.exe bin/main_M_vs_T.exe  bin/main_E_vs_T.exe bin/main_specific_heat.exe 
 
 bin/%GSL.exe : src/%GSL.c 
 	gcc -g -ansi -std=gnu99 -pedantic -Iinclude $< -o  $@ -lm -lgsl -lgslcblas
