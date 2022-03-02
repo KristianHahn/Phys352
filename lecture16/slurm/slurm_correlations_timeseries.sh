@@ -16,12 +16,15 @@ temps=( 1.00 1.50 2.00 2.25 2.26 2.27 2.28 2.5 3.00 5.00 )
 
 T=${temps[${SLURM_ARRAY_TASK_ID}]}
 
+module load gnuplot
+module load ImageMagick
+
 datdir=$1
 datdir="$datdir/timeseries_T_${T}"
 if [ -e $datdir ]; then rm -rf $datdir; fi 
 mkdir $datdir
 
-imgdir=$1
+imgdir=$2
 imgdir="$imgdir/timeseries_T_${T}"
 if [ -e $imgdir ]; then rm -rf $imgdir; fi 
 mkdir $imgdir
