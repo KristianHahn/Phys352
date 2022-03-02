@@ -1,8 +1,5 @@
-
-# submit with : sbatch ./slurm/slurm_correlations_timeseries.sh ./data ./img
-
-
 #!/bin/sh
+# submit with : sbatch ./slurm/slurm_correlations_timeseries.sh ./data ./img
 #SBATCH -A e20271               # Allocation
 #SBATCH -p short                # Queue
 #SBATCH -t 04:00:00             # Walltime/duration of the job
