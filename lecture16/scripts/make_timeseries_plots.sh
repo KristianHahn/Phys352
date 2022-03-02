@@ -18,5 +18,5 @@ for f in $idir/sweep_*.dat; do
 
 done 
 
-convert -delay 5 $(ls -1 $odir/*.png | sort -t'_' -k2 -n) -loop 0 $odir/timeseries.gif
+convert -delay 10 $(ls -1 $odir/*.png | sort -t'_' -k4 -n) -loop 0 $odir/timeseries.gif
 rm $odir/*.png
