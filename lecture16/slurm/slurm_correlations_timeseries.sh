@@ -1,3 +1,7 @@
+
+# submit with : sbatch ./slurm/slurm_correlations_timeseries.sh ./data ./img
+
+
 #!/bin/sh
 #SBATCH -A e20271               # Allocation
 #SBATCH -p short                # Queue
@@ -7,7 +11,7 @@
 #SBATCH --ntasks-per-node=6     # Number of Cores (Processors)
 #SBATCH --output=./slurm/logs/%A_%a.out   # Path for output must already exist
 #SBATCH --error=./slurm/logs/%A_%a.err    # Path for errors must already exist
-#SBATCH --job-name="circleInt"  # Name of job
+#SBATCH --job-name="ising"  # Name of job
 #SBATCH --array 0-9            # Job array (temperature) 
 
 
