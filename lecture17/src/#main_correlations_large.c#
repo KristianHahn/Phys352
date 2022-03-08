@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "IsingLattice2D.h"
+#include "magnetism.h"
+
+int main(int argc, char** argv) {
+
+  if( argc < 6) { 
+    printf("usage: main_correlations.exe <seed> <T> <H> <sweeps> <size>\n");
+    return -1;
+  }
+
+  unsigned seed=strtoul(argv[1],NULL,10); 
+  srand(seed);
+  double T = strtod(argv[2],NULL);
+  double H = strtod(argv[3],NULL);
+
+  unsigned nsweeps = strtoul(argv[4],NULL,10);
+  unsigned size    = strtoul(argv[5],NULL,10);
+
+  IsingLattice2D* lattice = create2DIsingLattice( 200, 200, T, H );
+  
+  int i;
+
+  for( i=0; i<1000; i++ ) { 
+    sweep( lattice, boltzmanFlip );
+  }
+
+  printf("here we go ...\n");
+
+  double M=0;
+  CorrelationInfo info;
+  info.spinsums = (double*)(calloc(200, sizeof(double)));
+  info.spinprodsums = (double*)(calloc(200, sizeof(double)));
+
+  for( i=0; i<20000; i++ ) { 
+    sweep( lattice, boltzmanFlip );
+    getCorrelationInfo(lattice, &info);
+  }
+  
+  for( int i=1; i<200; i++ ) {
+    double f_minus_avgS2 = (info.spinprodsums[i])/info.tests
+      - (info.spinsums[0]/info.tests)*(info.spinsums[0]/info.tests);
+    //    double f_minus_avgS2 = (info.spinprodsums[i])/info.tests; 
+    printf( "i: %d\tf_minus_avgS2: %f\n", i, f_minus_avgS2);
+  }
+
+
+}
